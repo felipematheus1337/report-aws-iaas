@@ -26,4 +26,8 @@ public class ReportService {
 
         return repository.save(report);
     }
+
+    public List<Report> list() {
+        return repository.findAll();
+    }
 }

@@ -16,7 +16,8 @@ public class Report {
 
     private ReportType type;
 
-    @OneToMany(mappedBy = "report")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "report_id")
     private Set<ReportItens> itens;
 
     public Report() {

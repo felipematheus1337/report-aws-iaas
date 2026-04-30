@@ -20,9 +20,6 @@ public class ReportItens {
 
     private LocalDateTime date;
 
-    @ManyToOne()
-    @JoinColumn(name = "report_itens_tb")
-    private Report report;
 
     public ReportItens() {
     }
