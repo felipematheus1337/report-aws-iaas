@@ -16,6 +16,7 @@ public class Report {
 
     private ReportType type;
 
+    @OneToMany(mappedBy = "report")
     private Set<ReportItens> itens;
 
     public Report() {

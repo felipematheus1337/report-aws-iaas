@@ -1,16 +1,28 @@
 package report_iaas.v1.domain;
 
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tb_report_itens")
 public class ReportItens {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String author;
 
     private BigDecimal value;
 
     private LocalDateTime date;
+
+    @ManyToOne()
+    @JoinColumn(name = "report_itens_tb")
+    private Report report;
 
     public ReportItens() {
     }

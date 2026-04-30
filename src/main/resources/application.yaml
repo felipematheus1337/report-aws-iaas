@@ -1,3 +1,19 @@
 spring:
-  application:
-    name: v1
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/report}
+    username: ${SPRING_DATASOURCE_USERNAME:report_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:report_password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
